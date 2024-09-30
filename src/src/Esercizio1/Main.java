@@ -27,8 +27,27 @@ public class Main {
         // uso il metodo degli array per trasformate in sringa
         System.out.println(Arrays.toString(array));
         //****************************parte seconda****************************//
-int indice = 10;
 
+        int index = 10;
+        while (index > 0) {
+            System.out.println("A che indice vuoi inserire il tuo numero? Inserire l'indice, inserire 0 per uscire dall'applicazione");
+            try {
+                index = Integer.parseInt(scanner.nextLine());
+                cambioArray(index, array);
+            } catch (NumberFormatException e) {
+                System.out.println("Devi inserire un numero intero!");
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Indice fuori dall'array, riprova!");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 
+// metodo che cambial'indice nell'array preso e fa inserire il numero cambiandolo in stringa
+    private static void cambioArray( int index, int[] arr) {
+        Random rand = new Random();
+        arr[index]=rand.nextInt(1,10);
+        System.out.println(Arrays.toString(arr));
     }
 }
