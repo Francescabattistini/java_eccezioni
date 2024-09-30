@@ -29,7 +29,8 @@ public class Main {
         //****************************parte seconda****************************//
         int index = 10;
         while (index > 0) {
-            System.out.println("A che indice vuoi inserire il tuo numero? Inserire l'indice, inserire 0 pernuscire dall'applicazione");
+            System.out.println("A che indice vuoi inserire il tuo numero? Inserire l'indice," +
+                    " inserire 0 pernuscire dall'applicazione");
             try {
                 index = Integer.parseInt(scanner.nextLine());
                 arrayChanger(index, array);
@@ -42,7 +43,7 @@ public class Main {
             }
         }
     }
-
+// metodo che serve a cambiare l'indice nell'array con un numero casuale
     private static void arrayChanger(int index, int[] arr) {
         Random rand = new Random();
         arr[index] = rand.nextInt(1, 10);
